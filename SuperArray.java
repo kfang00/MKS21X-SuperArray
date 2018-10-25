@@ -5,3 +5,12 @@ public class SuperArray {
 
   public SuperArray()
 }
+  public void clear() {
+    size = 0;
+  }
+
+  public int size() {
+    return size;
+  }
+
+  
