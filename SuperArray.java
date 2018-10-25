@@ -5,6 +5,7 @@ public class SuperArray {
 
   public SuperArray(){
     String[] arr = new String[10];
+    data = arr;
   }
 
   public void clear() {
@@ -15,4 +16,17 @@ public class SuperArray {
     return size;
   }
 
+  public boolean isEmpty() {
+    return (size == 0);
+  }
+
+  public boolean add(String a) {
+    if (size != data.length) {
+      data[size] = a;
+      return true;
+    }
+  }
+  public int size() {
+    return size;
+  }
 }
