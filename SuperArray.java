@@ -99,6 +99,15 @@ public class SuperArray {
     }
     return -1;
   }
+  
+  public lastIndexOf(String target) {
+    for (int x = (data.length - 1); x >= 0; x--) {
+	if (data[x] == target) {
+	return x;
+        }
+        x += 1;
     }
+    return -1;
   }
+
 }
