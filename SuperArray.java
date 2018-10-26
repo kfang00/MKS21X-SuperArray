@@ -46,21 +46,12 @@ public class SuperArray {
   }
 
   public String set(int b, String c) {
+    String d = data[b];
     if (b < 0 || b >= size()) {
       return null;
     }
-    return data[b] + "";
+    data[b] = c;
+    return d;
   }
 
-
-
-  public int size0() {
-    return size;
-  }
-  public int size0() {
-    return size;
-  }
-  public int size0() {
-    return size;
-  }
 }
