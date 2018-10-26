@@ -38,9 +38,22 @@ public class SuperArray {
     };
     return "[" + str + "," + data[data.length - 1] + "]";
   }
-  public int size0() {
-    return size;
+  public String get(int b) {
+    if (b < 0 || b >= size()) {
+      return null;
+    }
+    return data[b] + "";
   }
+
+  public String set(int b, String c) {
+    if (b < 0 || b >= size()) {
+      return null;
+    }
+    return data[b] + "";
+  }
+
+
+
   public int size0() {
     return size;
   }
