@@ -1,4 +1,3 @@
-
 public class SuperArray {
   private String[] data;
   private int size;
@@ -24,20 +23,34 @@ public class SuperArray {
       data[size] = a;
       return true;
     }
+    size += 1;
+    return false;
   }
 
   public String toString() {
-    return "[" + data + "]";
+    String str = "";
+    if (data[0] != null) {
+      str = data[0];
+    }
+    for (int x = 0; x < data.length; x++) {
+	if (data[x] != null) {
+	  str = (str + "," + data[x] );
+	}
+    }
+    if (data.length == 0) {
+	return "[]";
+    }
+    return "[" + str + "]";
   }
-
 
   public String toStringDebug() {
     String str = "";
     for (int x = 0; (x + 1) < data.length; x++) {
-	str = data[x] + ",";
-    };
-    return "[" + str + "," + data[data.length - 1] + "]";
+	str = (str + data[x] + ",");
+    }
+    return ("[" + str + "," + data[data.length - 1] + "]");
   }
+
   public String get(int b) {
     if (b < 0 || b >= size()) {
       return null;
