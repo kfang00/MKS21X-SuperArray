@@ -159,9 +159,11 @@ public class SuperArray {
       }
     }
     if (track == -1) {
-      return False;
+      return false;
     }
     else {
-      
+      this.remove(track)
+      return true;
+    }
   }
 }
