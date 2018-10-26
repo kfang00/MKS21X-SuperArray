@@ -148,4 +148,20 @@ public class SuperArray {
     }
     data = arrCopy;
   }
+  
+  public boolean remove(String a) {
+    int track = -1;
+    String str = data[a];
+    String[] arrCopy = new String[size]; 
+    for (int x = 0; x < data.length; x++) { 
+      if (data[x] == a) {
+        track = x;
+      }
+    }
+    if (track == -1) {
+      return False;
+    }
+    else {
+      
+  }
 }
