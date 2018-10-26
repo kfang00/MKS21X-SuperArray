@@ -75,7 +75,7 @@ public class SuperArray {
 	newSize = newSize * 2;
     }
     String[] newArr = new String[newSize];
-    for (int x = 0, x < size, x++) {
+    for (int x = 0; x < size; x++) {
 	newArr[x] = data[x];
     }
     data = newArr;
@@ -109,5 +109,17 @@ public class SuperArray {
     }
     return -1;
   }
+  
+  public void add(int e, String f) {
+    String str = data[e];
+    String[] arrCopy = new String[size + 1]; 
+    for (int x = 0; x < e; x++) {
+      arrCopy[x] == data[x];
+    }
+    
+      
+
+
+    data = arrCopy;
 
 }
