@@ -22,12 +22,13 @@ public class SuperArray {
   }
 
   public boolean add(String a) {
-    if (size != data.length) {
-      data[size] = a;
-      size += 1;
-      return true;
+    if (size >= (data.length - 1)) {
+      resize();
+      
     }
-    return false;
+    data[size] = a;
+    size += 1;
+    return true;
   }
 
   public String toString() {
@@ -73,7 +74,7 @@ public class SuperArray {
   private void resize() {
     int newSize = 1;
     if (size != 0) {
-	newSize = newSize * 2;
+	newSize = size * 2;
     }
     String[] newArr = new String[newSize];
     for (int x = 0; x < size; x++) {
@@ -81,6 +82,7 @@ public class SuperArray {
     }
     data = newArr;
   }
+
   public boolean contains(String target) {
     for (int x = 0; x < data.length; x++) {
       if (data[x] == target) {
@@ -96,7 +98,6 @@ public class SuperArray {
       if (data[x] == target) {
 	return x;
       }
-      x += 1;
     }
     return -1;
   }
@@ -106,7 +107,6 @@ public class SuperArray {
 	if (data[x] == target) {
 	return x;
         }
-        x += 1;
     }
     return -1;
   }
@@ -138,7 +138,7 @@ public class SuperArray {
       return null;
     }
     else {
-      for (int x = 0; x < track; x++) {
+      for (int x = 0; x <= a; x++) {
         arrCopy[x] = data[x];
         track += 1;
       }
