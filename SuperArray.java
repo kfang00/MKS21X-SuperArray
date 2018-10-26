@@ -4,8 +4,7 @@ public class SuperArray {
   private int size;
 
   public SuperArray(){
-    String[] arr = new String[10];
-    data = arr;
+    data = new String[10];
   }
 
   public void clear() {
@@ -26,7 +25,29 @@ public class SuperArray {
       return true;
     }
   }
-  public int size() {
+
+  public String toString() {
+    return "[" + data + "]";
+  }
+
+
+  public String toStringDebug() {
+    String str = "";
+    for (int x = 0; (x + 1) < data.length; x++) {
+	str + data[x] + ",";
+    };
+    return "[" + str + "," + data[data.length - 1] + "]";
+  }
+  public int size0() {
+    return size;
+  }
+  public int size0() {
+    return size;
+  }
+  public int size0() {
+    return size;
+  }
+  public int size0() {
     return size;
   }
 }
