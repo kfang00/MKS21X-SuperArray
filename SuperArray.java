@@ -89,4 +89,16 @@ public class SuperArray {
     }
     return false;
   }
+  
+  public int indexOf(String target) {
+    for (int x = 0; x < data.length; x++) {
+      if (data[x] == target) {
+	return x;
+      }
+      x += 1;
+    }
+    return -1;
+  }
+    }
+  }
 }
