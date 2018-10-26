@@ -3,7 +3,9 @@ public class SuperArray {
   private int size;
 
   public SuperArray(){
-    data = new String[10];
+    String[] arr = new String[10];
+    data = arr;
+    size = 0;
   }
 
   public void clear() {
@@ -65,6 +67,17 @@ public class SuperArray {
     }
     data[b] = c;
     return d;
+  }
+
+  private void resize() {
+    int newSize = 1;
+    if (size != 0) {
+	newSize = newSize * 2;
+    }
+    String[] newArr = new String[newSize];
+    for (int x = 0, x < newSize, x++) {
+	newArr[x] = data[x];
+    }
   }
 
 }
