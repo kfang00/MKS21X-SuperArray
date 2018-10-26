@@ -112,7 +112,6 @@ public class SuperArray {
   
   public void add(int e, String f) {
     int track = 0;
-    String str = data[e];
     String[] arrCopy = new String[size + 1]; 
     if ( e < 0 || e > size()) {
       System.out.println("ERROR");
@@ -122,7 +121,7 @@ public class SuperArray {
         arrCopy[x] == data[x];
         track += 1;
       }
-      arrCopy[x] = f;
+      arrCopy[track] = f;
       for (int x = track; x < data.length; x++) {
         arrCopy[x + 1] == data[x];
       }
@@ -130,4 +129,23 @@ public class SuperArray {
     data = arrCopy;
   }
 
+  public String remove(int a) {
+    int track = 0;
+    String str = data[a];
+    String[] arrCopy = new String[size]; 
+    if ( a < 0 || a >= size()) {
+      System.out.println("ERROR");
+      return null;
+    }
+    else {
+      for (int x = 0; x < e; x++) {
+        arrCopy[x] == data[x];
+        track += 1;
+      }
+      for (int x = track; (x + 1) < data.length; x++) {
+        arrCopy[x] == data[x + 1];
+      }
+    }
+    data = arrCopy;
+  }
 }
