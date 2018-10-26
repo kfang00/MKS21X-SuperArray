@@ -80,5 +80,13 @@ public class SuperArray {
     }
     data = newArr;
   }
-
+  public boolean contains(String target) {
+    for (int x = 0; x < data.length; x++) {
+      if (data[x] == target) {
+        return true;
+      }
+      x += 1;
+    }
+    return false;
+  }
 }
