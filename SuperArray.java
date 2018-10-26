@@ -75,9 +75,10 @@ public class SuperArray {
 	newSize = newSize * 2;
     }
     String[] newArr = new String[newSize];
-    for (int x = 0, x < newSize, x++) {
+    for (int x = 0, x < size, x++) {
 	newArr[x] = data[x];
     }
+    data = newArr;
   }
 
 }
