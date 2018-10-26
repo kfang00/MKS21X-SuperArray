@@ -10,6 +10,7 @@ public class SuperArray {
 
   public void clear() {
     size = 0;
+    data = new String[10];
   }
 
   public int size() {
@@ -23,9 +24,9 @@ public class SuperArray {
   public boolean add(String a) {
     if (size != data.length) {
       data[size] = a;
+      size += 1;
       return true;
     }
-    size += 1;
     return false;
   }
 
@@ -34,7 +35,7 @@ public class SuperArray {
     if (data[0] != null) {
       str = data[0];
     }
-    for (int x = 0; x < data.length; x++) {
+    for (int x = 1; x < data.length; x++) {
 	if (data[x] != null) {
 	  str = (str + "," + data[x] );
 	}
@@ -50,7 +51,7 @@ public class SuperArray {
     for (int x = 0; (x + 1) < data.length; x++) {
 	str = (str + data[x] + ",");
     }
-    return ("[" + str + "," + data[data.length - 1] + "]");
+    return ("[" + str + data[data.length - 1] + "]");
   }
 
   public String get(int b) {
