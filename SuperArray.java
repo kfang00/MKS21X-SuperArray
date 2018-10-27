@@ -123,7 +123,7 @@ public class SuperArray {
         track += 1;
       }
       arrCopy[track] = f;
-      for (int x = track; x < data.length; x++) {
+      for (int x = track; x < size; x++) {
         arrCopy[x + 1] = data[x];
       }
     }
@@ -138,14 +138,15 @@ public class SuperArray {
       return null;
     }
     else {
-      for (int x = 0; x <= a; x++) {
+      for (int x = 0; x < a; x++) {
         arrCopy[x] = data[x];
         track += 1;
       }
-      for (int x = track; (x + 1) < data.length; x++) {
+      for (int x = track; (x + 1) < size; x++) {
         arrCopy[x] = data[x + 1];
       }
       data = arrCopy;
+      size = size - 1;
       return data[track];
     }
     
