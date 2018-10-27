@@ -145,9 +145,10 @@ public class SuperArray {
       for (int x = track; (x + 1) < size; x++) {
         arrCopy[x] = data[x + 1];
       }
+      String str = data[track];
       data = arrCopy;
       size = size - 1;
-      return data[track];
+      return str;
     }
     
   }
