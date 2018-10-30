@@ -115,7 +115,19 @@ public class Driver{
 
     System.out.println();
 
-    System.out.println("SA.remove(15): " + SA.remove(15));           // index error
+    System.out.println("Testing remove(int)\'s throw ... Expected : 2 error messages");
+    try{
+      SA.remove(7);
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in remove(int)");
+    }
+    try{
+      SA.remove(-2);
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in remove(int)");
+    }
+
+    System.out.println();System.out.println("SA.remove(15): " + SA.remove(15));           // index error
     System.out.println("SA.remove(-2): " + SA.remove(-2));           // index error
     System.out.println("SA.remove(2): " + SA.remove(2));             // "C"
     System.out.println("SA: " + SA);
