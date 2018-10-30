@@ -30,9 +30,17 @@ public class Driver{
 
     System.out.println("SA.get(1): " + SA.get(1));                   // "C"
     System.out.print("SA.get(15): ");
-    if(SA.get(15) == null) { System.out.println("index error"); }    // "index error"
-    System.out.print("SA.get(-2): ");
-    if(SA.get(-1) == null) { System.out.println("index error"); }    // "index error"
+    System.out.println("Testing get(int)\'s throw ... Expected : 2 error messages");
+    try{
+      SA.get(2);
+    } catch(IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in get()");
+    }
+    try{
+      SA.get(-2);
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in get()");
+    }
 
     System.out.println();
 
