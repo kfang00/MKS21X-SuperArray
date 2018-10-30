@@ -76,8 +76,20 @@ public class Driver{
 
     System.out.println();
 
-    SA.add(15,"C"); System.out.println("SA.add(15,\"C\")");          // "index error"
-    SA.add(-2,"C"); System.out.println("SA.add(-2,\"C\")");          // "index error"
+    System.out.println("Testing add(int,String)\'s throw ... Expected : 2 error messages");
+    try{
+      SA.add(5,"xd");
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in add(int,String)");
+    }
+    try{
+      SA.add(-2,"xd");
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in add(int,String)");
+    }
+
+    System.out.println();
+
     SA.add(1,"C"); System.out.println("SA.add(1,\"C\")");            // no output
     System.out.println("SA: " + SA);
     // [I'm, C, C]
