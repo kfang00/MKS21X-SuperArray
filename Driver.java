@@ -51,9 +51,19 @@ public class Driver{
     System.out.println();
 
     System.out.print("SA.set(15, \"J\"): ");
-    if(SA.get(15) == null) { System.out.println("index error"); }    // "index error"
-    System.out.print("SA.get(-2, \"J\"): ");
-    if(SA.get(-1) == null) { System.out.println("index error"); }    // "index error"
+    System.out.println("Testing set(int,String)\'s throw ... Expected : 2 error messages");
+    try{
+      SA.set(2,"C");
+    } catch(IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in set(int,String)");
+    }
+    try{
+      SA.set(-2,"xd");
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in set(int,String)");
+    }
+
+    System.out.println();
 
     System.out.println("SA: " + SA);
     // [I'm, C]
