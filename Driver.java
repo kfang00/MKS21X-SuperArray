@@ -127,8 +127,6 @@ public class Driver{
       System.out.println("Caught an Exception in remove(int)");
     }
 
-    System.out.println();System.out.println("SA.remove(15): " + SA.remove(15));           // index error
-    System.out.println("SA.remove(-2): " + SA.remove(-2));           // index error
     System.out.println("SA.remove(2): " + SA.remove(2));             // "C"
     System.out.println("SA: " + SA);
     // [I'm, sorry, C]
@@ -239,9 +237,7 @@ public class Driver{
 		System.out.println(beef.get(0));
 		System.out.println(beef.get(1));
 		System.out.println(beef.get(2));
-		System.out.println("\nTesting get() for out of bounds: should return null");
-		System.out.println(beef.get(-1));
-		System.out.println(beef.get(10));
+	
 		
 		//testing set()
 		System.out.println("\n\n!!Testing set()!!");
@@ -343,7 +339,7 @@ public class Driver{
     //testing remove()
     System.out.println(randomLetters);//should print [b,f,a,g,c,z,b,z]
 
-    System.out.println(randomLetters.remove(9));//should print null
+
     System.out.println(randomLetters.remove(1));//should print f;
     System.out.println(randomLetters);//should print [b,a,g,c,z,b,z]
 
