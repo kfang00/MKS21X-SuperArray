@@ -63,7 +63,7 @@ public class SuperArray {
 
   public String get(int b) {
     if (b < 0 || b >= size()) {
-      throw new IllegalArgumentException(); 
+      throw new IndexOutOfBoundsException(); 
     }
     return data[b] + "";
   }
@@ -71,7 +71,7 @@ public class SuperArray {
   public String set(int b, String c) {
     String d = data[b];
     if (b < 0 || b >= size()) {
-      throw new IllegalArgumentException(); 
+      throw new IndexOutOfBoundsException(); 
     }
     data[b] = c;
     return d;
@@ -120,7 +120,7 @@ public class SuperArray {
     int track = 0;
     String[] arrCopy = new String[size() + 1]; 
     if ( e < 0 || e > size()) {
-      throw new IllegalArgumentException(); 
+      throw new IndexOutOfBoundsException(); 
     }
     else {
       for (int x = 0; x < e; x++) {
@@ -141,7 +141,7 @@ public class SuperArray {
     int track = 0;
     String[] arrCopy = new String[size()]; 
     if ( a < 0 || a >= size()) {
-      throw new IllegalArgumentException(); 
+      throw new IndexOutOfBoundsException(); 
     }
     else {
       for (int x = 0; x < a; x++) {
