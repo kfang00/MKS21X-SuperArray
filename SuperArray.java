@@ -8,6 +8,12 @@ public class SuperArray {
     size = 0;
   }
 
+  public SuperArray(int startingCapacity) {
+    String[] arr = new String[startingCapacity];
+    data = arr;
+    size = 0;
+  }
+
   public void clear() {
     size = 0;
     data = new String[10];
@@ -57,7 +63,7 @@ public class SuperArray {
 
   public String get(int b) {
     if (b < 0 || b >= size()) {
-      return null;
+      throw new IllegalArgumentException(); 
     }
     return data[b] + "";
   }
@@ -65,7 +71,7 @@ public class SuperArray {
   public String set(int b, String c) {
     String d = data[b];
     if (b < 0 || b >= size()) {
-      return null;
+      throw new IllegalArgumentException(); 
     }
     data[b] = c;
     return d;
@@ -114,7 +120,7 @@ public class SuperArray {
     int track = 0;
     String[] arrCopy = new String[size() + 1]; 
     if ( e < 0 || e > size()) {
-      System.out.println("ERROR");
+      throw new IllegalArgumentException(); 
     }
     else {
       for (int x = 0; x < e; x++) {
@@ -135,7 +141,7 @@ public class SuperArray {
     int track = 0;
     String[] arrCopy = new String[size()]; 
     if ( a < 0 || a >= size()) {
-      System.out.println("ERROR");
+      throw new IllegalArgumentException(); 
       return null;
     }
     else {
