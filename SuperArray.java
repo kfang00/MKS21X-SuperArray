@@ -13,6 +13,12 @@ public class SuperArray {
     data = arr;
     size = 0;
   }
+  
+  public SuperArray(int initialCapacity) {
+    if (startingCapacity < 0) {
+      throw new IllegalArgumentException();
+    }
+  }
 
   public void clear() {
     size = 0;
@@ -62,6 +68,9 @@ public class SuperArray {
   }
 
   public String get(int b) {
+    if (size == 0) {
+      return null;
+    }
     if (b < 0 || b >= size()) {
       throw new IndexOutOfBoundsException(); 
     }
