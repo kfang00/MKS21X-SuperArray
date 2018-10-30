@@ -142,7 +142,6 @@ public class SuperArray {
     String[] arrCopy = new String[size()]; 
     if ( a < 0 || a >= size()) {
       throw new IllegalArgumentException(); 
-      return null;
     }
     else {
       for (int x = 0; x < a; x++) {
