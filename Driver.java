@@ -1,5 +1,197 @@
-public class Driver{
-  public static void main(String[] args){
+public class Driver {
+
+  public static void main(String[] args) {
+
+
+    System.out.println("TESTING PHASE 1 and 2... except clear() which will be at the end");
+
+    System.out.println();
+    System.out.println();
+    System.out.println("Testing SuperArray(int) ... SA should be [] even when debugged");
+    SuperArray SAA = new SuperArray(0);
+
+    System.out.println("Testing toString() and toStringDebug ... Expected: []");
+    System.out.println("Current Status of SAA: " + SAA.toStringDebug());
+
+    System.out.println();
+
+    System.out.println("Testing isEmpty() ... Expected : true");
+    System.out.println("isEmpty?: " + SAA.isEmpty());
+
+    System.out.println();
+
+    System.out.println("Testing add(String) ... Expected : true");
+    System.out.println("Did we add \"A\" to SAA? :" + SAA.add("A"));
+    System.out.println("Expected : [A]");
+    System.out.println("Testing toString() ... Current Status of SAA : " + SAA);
+    System.out.println("Testing isEmpty() ... Expected : false");
+    System.out.println("isEmpty?: " + SAA.isEmpty());
+    System.out.println("Testing size() ... Expected : 1");
+    System.out.println("Size: " + SAA.size());
+
+    System.out.println();
+
+    System.out.println("Adding \"B\" to SAA?: " + SAA.add("B"));
+    System.out.println("Testing resize() and toStringDebug ... Expected [A, B, null]");
+    System.out.println("Current Status of SAA: " + SAA.toStringDebug());
+    System.out.println("Testing get(int) ... Expected : B");
+    System.out.println("SAA[1] == " + SAA.get(1));
+    System.out.println("Testing get(int)\'s throw ... Expected : 2 error messages");
+    try{
+      SAA.get(2);
+    } catch(IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in get()");
+    }
+    try{
+      SAA.get(-2);
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in get()");
+    }
+
+    System.out.println();
+
+    System.out.println("Testing set(int,String) ...  Expected : A");
+    System.out.println("\"C\" will replace : " + SAA.set(0,"C"));
+    System.out.println("Expected : [C, B]");
+    System.out.println("SAA\'s Current Status: " + SAA);
+    System.out.println("Testing set(int,String)\'s throw ... Expected : 2 error messages");
+    try{
+      SAA.set(2,"C");
+    } catch(IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in set(int,String)");
+    }
+    try{
+      SAA.set(-2,"xd");
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in set(int,String)");
+    }
+
+    System.out.println();
+    System.out.println("Expected : [C, B]");
+    System.out.println("SAA\'s Current Status after Testing Phase 1: " + SAA);
+    System.out.println("Expected : [C, B, null]");
+    System.out.println("SAA\'s Current debugged Status after Testing Phase 1: " + SAA.toStringDebug());
+    System.out.println();
+    System.out.println("******************************************************");
+    System.out.println();
+    System.out.println("TESTING PHASE 2 and 3 ...");
+
+    System.out.println();
+
+    System.out.println("Testing add(int.String) ... Expected : SAA should be [C, D, B, E]");
+    SAA.add(1,"D");
+    SAA.add(3, "E");
+    System.out.println("SAA\'s Current Status: " + SAA);
+    System.out.println("Testing add(int,String)\'s throw ... Expected : 2 error messages");
+    try{
+      SAA.add(5,"xd");
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in add(int,String)");
+    }
+    try{
+      SAA.add(-2,"xd");
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in add(int,String)");
+    }
+
+    System.out.println();
+
+    System.out.println("Testing resize() ... Expected: SAA when debugged should be [C, D, B, E, null, null, null]");
+    System.out.println(SAA.toStringDebug());
+
+    System.out.println();
+
+    System.out.println("Testing contains(String) ... Expected : true");
+    System.out.println("Does SAA contain \"C\" ?: " + SAA.contains("C"));
+    System.out.println("Expected : false");
+    System.out.println("Does SAA contain \"C\" ?: " + SAA.contains("F"));
+
+    System.out.println("Testing indexOf(String) ... Expected : 3");
+    System.out.println("Where is \"E\" in SAA? :" + SAA.indexOf("E"));
+    System.out.println("Expected : -1");
+    System.out.println("Where is \"E\" in SAA? :" + SAA.indexOf("Z"));
+
+    System.out.println();
+
+    SAA.add("C");
+    System.out.println("Added \"C\" to the end of the list using add(String)");
+    System.out.println("Status of SAA is: " + SAA);
+
+    System.out.println();
+
+    System.out.println("Testing lastIndexOf(String) ... Expected : 4");
+    System.out.println("Where is \"C\" in SAA? :" + SAA.lastIndexOf("C"));
+    System.out.println("Expected : -1");
+    System.out.println("Where is \"Z\" in SAA? :" + SAA.lastIndexOf("Z"));
+
+    System.out.println();
+
+    System.out.println("Testing remove(int) ...  Expected : Removed element is D");
+    System.out.println("The element that is removed is : " + SAA.remove(1));
+    System.out.println("Expected: SAA is [C, B, E, C]");
+    System.out.println("Current Status of SAA: " + SAA);
+    System.out.println("Testing remove(int)\'s throw ... Expected : 2 error messages");
+    try{
+      SAA.remove(7);
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in remove(int)");
+    }
+    try{
+      SAA.remove(-2);
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Caught an Exception in remove(int)");
+    }
+
+    System.out.println();
+
+    System.out.println("Testing remove(String) ...  Expected : true");
+    System.out.println("The first element, \"C\" is removed ? : " + SAA.remove("C"));
+    System.out.println("Expected: SAA is [B, E, C]");
+    System.out.println("Current Status of SAA: " + SAA);
+    System.out.println("Expected: false");
+    System.out.println(SAA.remove("ASD"));
+
+    System.out.println();
+    
+    System.out.println("Testing clear() ... Expected : SAA should be []");
+    SAA.clear();
+    System.out.println(SAA);
+
+    System.out.println();
+
+    System.out.println("END OF TESTING");
+    
+    SuperArray SA2 = new SuperArray(4);
+
+    System.out.println("SA2: " + SA2);
+    // []
+    System.out.println("isEmpty?: " + SA2.isEmpty());                 // true
+
+    System.out.println();
+
+    SA2.add("A"); System.out.println("SA2.add(\"A\")");                // no output
+    System.out.println("SA2 (debug): " + SA2.toStringDebug());
+    // [A, null, null, null]
+
+    System.out.println();
+
+    System.out.println("SA2.remove(0): " + SA2.remove(0));             // "A"
+    SA2.add("No"); System.out.println("SA2.add(\"No\")");              // no output
+    SA2.add("I"); System.out.println("SA2.add(\"I\")");                // no output
+    SA2.add("am"); System.out.println("SA2.add(\"am\")");              // no output
+    SA2.add("your"); System.out.println("SA2.add(\"your\")");          // no output
+    SA2.add("father"); System.out.println("SA2.add(\"father\")");      // no output
+
+    System.out.println();
+
+    System.out.println("size: " + SA2.size());                        // 5
+    System.out.println("SA2: " + SA2);
+    // [No, I, am, your, father]
+    System.out.println("SA2 (debug): " + SA2.toStringDebug());
+    // [No, I, am, your, father, null, null, null]
+
+    System.out.println("\n" + "------------------------------------------------------------" + "\n");
+
     SuperArray SA = new SuperArray();
 
     System.out.println("SA: " + SA);
@@ -16,7 +208,7 @@ public class Driver{
     SA.add("B"); System.out.println("SA.add(\"B\")");                // no output
     SA.add("C"); System.out.println("SA.add(\"C\")");                // no output
     System.out.println("size: " + SA.size());                        // 3
-    System.out.println("SA: " + SA.toStringDebug());
+    System.out.println("SA (debug): " + SA.toStringDebug());
     // [A, B, C, null, null, null, null, null, null, null]
 
     System.out.println();
@@ -30,17 +222,7 @@ public class Driver{
 
     System.out.println("SA.get(1): " + SA.get(1));                   // "C"
     System.out.print("SA.get(15): ");
-    System.out.println("Testing get(int)\'s throw ... Expected : 2 error messages");
-    try{
-      SA.get(2);
-    } catch(IndexOutOfBoundsException e){
-      System.out.println("Caught an Exception in get()");
-    }
-    try{
-      SA.get(-2);
-    } catch (IndexOutOfBoundsException e){
-      System.out.println("Caught an Exception in get()");
-    }
+    System.out.print("SA.get(-2): ");
 
     System.out.println();
 
@@ -51,19 +233,7 @@ public class Driver{
     System.out.println();
 
     System.out.print("SA.set(15, \"J\"): ");
-    System.out.println("Testing set(int,String)\'s throw ... Expected : 2 error messages");
-    try{
-      SA.set(2,"C");
-    } catch(IndexOutOfBoundsException e){
-      System.out.println("Caught an Exception in set(int,String)");
-    }
-    try{
-      SA.set(-2,"xd");
-    } catch (IndexOutOfBoundsException e){
-      System.out.println("Caught an Exception in set(int,String)");
-    }
-
-    System.out.println();
+    System.out.print("SA.get(-2, \"J\"): ");
 
     System.out.println("SA: " + SA);
     // [I'm, C]
@@ -71,22 +241,8 @@ public class Driver{
 
     System.out.println();
 
-    System.out.println("contains \"D\"?): " + SA.contains("D"));     // false
-    System.out.println("contains \"C\"?): " + SA.contains("C"));     // true
-
-    System.out.println();
-
-    System.out.println("Testing add(int,String)\'s throw ... Expected : 2 error messages");
-    try{
-      SA.add(5,"xd");
-    } catch (IndexOutOfBoundsException e){
-      System.out.println("Caught an Exception in add(int,String)");
-    }
-    try{
-      SA.add(-2,"xd");
-    } catch (IndexOutOfBoundsException e){
-      System.out.println("Caught an Exception in add(int,String)");
-    }
+    System.out.println("contains(\"D\"?): " + SA.contains("D"));     // false
+    System.out.println("contains(\"C\"?): " + SA.contains("C"));     // true
 
     System.out.println();
 
@@ -114,23 +270,10 @@ public class Driver{
     System.out.println(SA.lastIndexOf("D"));                         // -1
 
     System.out.println();
-
-    System.out.println("Testing remove(int)\'s throw ... Expected : 2 error messages");
-    try{
-      SA.remove(7);
-    } catch (IndexOutOfBoundsException e){
-      System.out.println("Caught an Exception in remove(int)");
-    }
-    try{
-      SA.remove(-2);
-    } catch (IndexOutOfBoundsException e){
-      System.out.println("Caught an Exception in remove(int)");
-    }
-
     System.out.println("SA.remove(2): " + SA.remove(2));             // "C"
     System.out.println("SA: " + SA);
     // [I'm, sorry, C]
-    System.out.println("SA: " + SA.toStringDebug());
+    System.out.println("SA (debug): " + SA.toStringDebug());
     // [I'm, sorry, C, null, null, null, null, null, null, null, null]
 
     System.out.println();
@@ -151,7 +294,7 @@ public class Driver{
 
     System.out.println("SA: " + SA);
     // [I'm, sorry]
-    System.out.println("SA: " + SA.toStringDebug());
+    System.out.println("SA (debug): " + SA.toStringDebug());
     // [I'm, sorry, null, null, null, null, null, null, null, null, null]
 
     System.out.println();
@@ -169,7 +312,7 @@ public class Driver{
     System.out.println("size: " + SA.size());                        // 9
     System.out.println("SA: " + SA);
     // [I'm, sorry, Dave, I'm, afraid, I, can't, let, you]
-    System.out.println("SA: " + SA.toStringDebug());
+    System.out.println("SA (debug): " + SA.toStringDebug());
     // [I'm, sorry, Dave, I'm, afraid, I, can't, let, you, null]
 
     System.out.println();
@@ -182,173 +325,7 @@ public class Driver{
     System.out.println("size: " + SA.size());                        // 11
     System.out.println("SA: " + SA);
     // [I'm, sorry, Dave, I'm, afraid, I, can't, let, you, do, that]
-    System.out.println("SA: " + SA.toStringDebug());
+    System.out.println("SA (debug): " + SA.toStringDebug());
     // [I'm, sorry, Dave, I'm, afraid, I, can't, let, you, do, that, null, null, null, null, null, null, null, null, null]
-		SuperArray beef = new SuperArray();
-		/**phase 1 testing start*/
-		System.out.println("Phase 1 testing, start!");
-		
-		//testing SuperArray initializing
-		System.out.println("\n!!Testing SuperArray initializing!!");
-		System.out.println("Testing toString(): should return []");
-		System.out.println(beef);
-		System.out.println("\nTesting toStringDebug(): should return [null, ... null]");
-		System.out.println(beef.toStringDebug());
-		
-		//testing size()
-		System.out.println("\n\n!!Testing size()!!");
-		System.out.println("Testing size(): should return 0");
-		System.out.println(beef.size());
-		
-		//testing add()
-		System.out.println("\n\n!!Testing add()!!");
-		System.out.println("Testing add() while empty: should return true");
-		System.out.println(beef.add("red"));
-		System.out.println("\nChecking add() and toString(): should return [red]");
-		System.out.println(beef);
-		beef.add("cow");
-		System.out.println("\nChecking add() and toString(): should return [red, cow]");
-		System.out.println(beef);
-		for (int x = 0; x < 9; x++){
-			beef.add("filler");
-		}
-		
-		//testing clear()
-		System.out.println("\n\n!!Testing clear()!!");
-		System.out.println("Testing clear(): should return []");
-		beef.clear();
-		System.out.println(beef);
-		System.out.println("\nTesting clear() and size(): should return 0");
-		System.out.println(beef.size());
-		System.out.println("\nTesting add(\"red\") after clear(): should return true");
-		System.out.println(beef.add("red"));
-		System.out.println("\nSeeing SuperArray: should be [red]");
-		System.out.println(beef);
-		beef.clear();
-		
-		//testing get()
-		System.out.println("\n\n!!Testing get()!!");
-		System.out.println("Testing get() while empty: should return null");
-		System.out.println(beef.get(0));
-		beef.add("red");
-		beef.add("cow");
-		beef.add("meat");
-		System.out.println("\nTesting get() with indices 0-2 filled: should return values *check code*");
-		System.out.println(beef.get(0));
-		System.out.println(beef.get(1));
-		System.out.println(beef.get(2));
-	
-		
-		//testing set()
-		System.out.println("\n\n!!Testing set()!!");
-		System.out.println("Using SuperArray from !!testing get()!!");
-		System.out.println(beef);
-		System.out.println("\nTesting set(0, \"blue\"): should return red");
-		System.out.println(beef.set(0, "blue"));
-		System.out.println("SuperArray should now be [blue, cow, meat]");
-		System.out.println(beef);
-		System.out.println("\nTesting set(1, \"fish\"): should return cow");
-		System.out.println(beef.set(1, "fish"));
-		System.out.println("SuperArray should now be [blue, fish, meat]");
-		System.out.println(beef);
-		System.out.println("\nTesting set(2, \"vegetal\"): should return meat");
-		System.out.println(beef.set(2, "vegetal"));
-		System.out.println("SuperArray should now be [blue, fish, vegetal]");
-		System.out.println(beef);
-		System.out.println("\nUsing empty SuperArray ");
-		beef.clear();
-		System.out.println("\nTesting set(2, \"vegetal\"): should return null");
-		System.out.println(beef.set(2, "vegetal"));
-		System.out.println("SuperArray should now be []");
-		System.out.println(beef);
-		/** phase 1 testing end*/
-    /**phase 2 testing start*/
-    System.out.println("Phase 2 testing, start!");
-    //testing resize()
-    SuperArray letters = new SuperArray();
-
-    for (int x = 0; x < 20; x++){
-      System.out.println();
-			letters.add("a");
-      System.out.println("Size: " + letters.size());
-      System.out.println(letters);
-		} //array should now be filled to index 19
-
-    System.out.println();
-    System.out.println("Phase 2 testing, end");
-    /** phase 2 testing end*/
-    System.out.println("Phase 3 testing, start!");
-    System.out.println();
-
-    //testing contains()
-    SuperArray randomLetters = new SuperArray();
-    randomLetters.add("b");
-    randomLetters.add("f");
-    randomLetters.add("g");
-    randomLetters.add("c");
-    randomLetters.add("z");
-
-    System.out.println(randomLetters); //should print [b,f,g,c,z]
-
-    if (randomLetters.contains("a")){
-      System.out.println("a is in the array");
-    } else {
-      System.out.println("a is not in the array");
-    } //should print "a is not in the array"
-
-    if (randomLetters.contains("c")){
-      System.out.println("c is in the array");
-    } else {
-      System.out.println("c is not in the array");
-    } //should print "c is in the array"
-
-    System.out.println();
-
-    //testing indexOf() and lastIndexOf()
-    randomLetters.add("b");
-    randomLetters.add("z");
-    System.out.println(randomLetters); //should print [b,f,g,c,z,b,z]
-
-    System.out.println("The first occurance of b is at: " + randomLetters.indexOf("b")); //should print 0
-    System.out.println("The first occurance of f is at: " + randomLetters.indexOf("f")); //should print 1
-    System.out.println("The first occurance of g is at: " + randomLetters.indexOf("g")); //should print 2
-    System.out.println("The first occurance of c is at: " + randomLetters.indexOf("c")); //should print 3
-    System.out.println("The first occurance of z is at: " + randomLetters.indexOf("z")); //should print 4
-    System.out.println("The first occurance of j is at: " + randomLetters.indexOf("j")); //should print -1
-
-    System.out.println();
-
-    System.out.println("The last occurance of b is at: " + randomLetters.lastIndexOf("b")); //should print 5
-    System.out.println("The last occurance of f is at: " + randomLetters.lastIndexOf("f")); //should print 1
-    System.out.println("The last occurance of g is at: " + randomLetters.lastIndexOf("g")); //should print 2
-    System.out.println("The last occurance of c is at: " + randomLetters.lastIndexOf("c")); //should print 3
-    System.out.println("The last occurance of z is at: " + randomLetters.lastIndexOf("z")); //should print 6
-    System.out.println("The last occurance of j is at: " + randomLetters.lastIndexOf("j")); //should print -1
-
-    System.out.println();
-
-    //testing add(int,String)
-    System.out.println(randomLetters);//should print [b,f,g,c,z,b,z]
-
-    randomLetters.add(2, "a");
-    System.out.println(randomLetters);//should print [b,f,a,g,c,z,b,z]
-    randomLetters.add(10, "a");//should print error
-
-    System.out.println();
-
-    //testing remove()
-    System.out.println(randomLetters);//should print [b,f,a,g,c,z,b,z]
-
-
-    System.out.println(randomLetters.remove(1));//should print f;
-    System.out.println(randomLetters);//should print [b,a,g,c,z,b,z]
-
-    System.out.println();
-    System.out.println(randomLetters.remove("d"));//should print false
-    System.out.println(randomLetters.remove("z"));//should print true
-    System.out.println(randomLetters);//should print [b,a,g,c,b,z]
-
-    System.out.println();
-    System.out.println("Phase 3 testing, end");
-	}
+  }
 }
