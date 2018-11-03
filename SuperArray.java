@@ -9,14 +9,13 @@ public class SuperArray {
   }
 
   public SuperArray(int startingCapacity) {
-    String[] arr = new String[startingCapacity];
-    data = arr;
-    size = 0;
-  }
-  
-  public SuperArray(int initialCapacity) {
     if (startingCapacity < 0) {
       throw new IllegalArgumentException();
+    }
+    else {
+      String[] arr = new String[startingCapacity];
+      data = arr;
+      size = 0;
     }
   }
 
@@ -61,6 +60,9 @@ public class SuperArray {
 
   public String toStringDebug() {
     String str = "";
+    if (size() == 0) {
+      return "[]";
+    }
     for (int x = 0; (x + 1) < data.length; x++) {
 	str = (str + data[x] + ",");
     }
@@ -68,9 +70,6 @@ public class SuperArray {
   }
 
   public String get(int b) {
-    if (size == 0) {
-      return null;
-    }
     if (b < 0 || b >= size()) {
       throw new IndexOutOfBoundsException(); 
     }
