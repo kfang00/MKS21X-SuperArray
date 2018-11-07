@@ -1,8 +1,9 @@
+import java.util.ArrayList;
 public class Driver {
-
+  
   public static void main(String[] args) {
 
-
+    
     System.out.println("TESTING PHASE 1 and 2... except clear() which will be at the end");
 
     System.out.println();
@@ -520,5 +521,32 @@ public class Driver {
     if (!case11) {
       System.out.println("Go fix your set because it's stupid right now");
     }
+    ArrayList<String> key = new ArrayList<String>();
+      SuperArray ans = new SuperArray();
+      for(int i = 0; i < 1000;i++){
+        ans.add(""+i);
+        key.add(""+i);
+        ans.add(0,""+i);//add duplicates at other positions!
+        key.add(0,""+i);
+      }
+
+      int count = 0;
+      for(int i = 0; i < 100 && ans.indexOf(""+i) == key.indexOf(""+i);i++){
+        count++;
+      }
+
+      ArrayList<String> key1 = new ArrayList<String>();
+      SuperArray ans1 = new SuperArray();
+      for(int i = 0; i < 1000;i++){
+        ans1.add(""+i);
+        key1.add(""+i);
+        ans1.add(0,""+i);
+        key1.add(0,""+i);
+      }
+      int count1 = 0;
+      for(int i = 0; i < 100 && ans1.set(i,"X"+i).equals(key1.set(i,"X"+i));i++){
+        count1++;
+      }
+
   }
 }
