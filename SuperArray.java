@@ -99,7 +99,7 @@ public class SuperArray {
 
   public boolean contains(String target) {
     for (int x = 0; x < data.length; x++) {
-      if (data[x] == target) {
+      if (data[x].equals(target)) {
         return true;
       }
     }
