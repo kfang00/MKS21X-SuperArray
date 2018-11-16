@@ -108,7 +108,7 @@ public class SuperArray {
   
   public int indexOf(String target) {
     for (int x = 0; x < data.length; x++) {
-      if (data[x] == target) {
+      if (data[x].equals(target)) {
 	return x;
       }
     }
@@ -117,7 +117,7 @@ public class SuperArray {
   
   public int lastIndexOf(String target) {
     for (int x = (data.length - 1); x >= 0; x--) {
-	if (data[x] == target) {
+	if (data[x].equals(target)) {
 	return x;
         }
     }
