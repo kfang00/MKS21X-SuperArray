@@ -548,5 +548,16 @@ public class Driver {
         count1++;
       }
 
+      SuperArray SAtry = new SuperArray();
+      String ss = "12345678900987654321";
+      for (int r = 0; (r + 1) < ss.length(); r++) {
+	SAtry.add(ss.substring(r, r + 1));
+      }
+      System.out.println(SAtry.indexOf("0"));
+      System.out.println();
+      System.out.println(SAtry.lastIndexOf("0"));
+      System.out.println();
+      System.out.println(SAtry.contains("0"));
+      System.out.println();
   }
 }
